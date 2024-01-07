@@ -7,9 +7,7 @@ ENV CGO_ENABLED=0 GO111MODULE=on
 RUN go build -o ./bin ./cmd/main.go
 
 FROM alpine:latest
-
 VOLUME /ssl
-
 WORKDIR /
 COPY --from=builder /app/bin/* ./
-ENTRYPOINT ["./main"]
+CMD ["./main"]
