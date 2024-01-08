@@ -19,7 +19,12 @@ jobs:
         go-version-file: 'go.mod'
 
     - name: Build
+      env:
+        CGO_ENABLED: 0
+        GO111MODULE: on
       run: go build -v ./...
 
     - name: Test
+      env:
+        {{ TEST_ENV_VARS }}
       run: go test -v ./...
