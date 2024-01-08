@@ -10,4 +10,5 @@ FROM alpine:latest
 VOLUME /ssl
 WORKDIR /
 COPY --from=builder /app/bin/* ./
+RUN chmod +x ./main
 ENTRYPOINT ["./main"]
