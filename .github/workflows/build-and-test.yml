@@ -4,7 +4,6 @@
 name: Build and test Go application
 
 on:
-  push:
   pull_request:
 
 jobs:
