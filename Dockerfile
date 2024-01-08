@@ -4,6 +4,7 @@ COPY go.* ./
 RUN go mod download
 COPY . .
 ENV CGO_ENABLED=0 GO111MODULE=on
+RUN mkdir -p ./bin
 RUN go build -o ./bin ./cmd/main.go
 
 FROM alpine:latest
